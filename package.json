@@ -2,7 +2,7 @@
   "name": "printer",
   "description": "Node.js printer bindings",
   "version": "0.4.0",
-  "homepage": "http://github.com/tojocky/node-printer",
+  "homepage": "http://github.com/wardlem/node-printer",
   "author": {
     "name": "Ion Lupascu",
     "url": "http://program-support.co.uk/",
@@ -16,18 +16,13 @@
     "url": "https://github.com/tojocky/node-printer.git"
   },
   "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^2.1.0",
-    "grunt-node-gyp": "git://github.com/tojocky/grunt-node-gyp.git",
-    "grunt-nw-gyp": "git://github.com/tojocky/grunt-nw-gyp.git",
-    "nodeunit": "*"
+    "nodeunit": "*",
+    "aws-sdk": "2.x"
   },
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 12.18.0"
   },
   "scripts": {
-    "preinstall": "npm install node-gyp node-pre-gyp",
     "install": "node-pre-gyp install --fallback-to-build",
     "npg": "node-pre-gyp",
     "npg-clean": "node-pre-gyp clean",
@@ -36,8 +31,8 @@
   },
   "binary": {
     "module_name": "node_printer",
-    "module_path": "./lib/",
-    "host": "https://github.com/tojocky/node-printer/releases/download/",
+    "module_path": "./lib/bindings/",
+    "host": "https://boxie-dev.s3-us-west-1.amazonaws.com/software/node-printer/versions",
     "remote_path": "{version}"
   },
   "licenses": [
@@ -47,8 +42,9 @@
   ],
   "main": "./lib/printer",
   "dependencies": {
+    "eslint": "^6.8.0",
+    "get-stream": "^5.1.0",
     "nan": "^2.14.0",
-    "node-gyp": "^6.0.1",
-    "node-pre-gyp": "^0.14.0"
+    "node-pre-gyp": "^0.15.0"
   }
 }

@@ -1,0 +1,236 @@
+env:
+  es6: true
+  node: true
+root: true
+globals: {}
+extends: eslint:recommended
+parserOptions:
+  ecmaVersion: 2018
+  ecmaFeatures:
+    # set to true for jsx projects
+    jsx: false
+rules:
+
+  # variables
+  no-var: error
+  prefer-const: warn
+  no-const-assign: error
+  no-multi-assign: error
+  no-unused-vars:
+    - error
+    -
+      varsIgnorePattern: '^_'
+      argsIgnorePattern: '^_'
+      caughtErrorsIgnorePattern: '^_'
+      args: all
+      caughtErrors: all
+  one-var-declaration-per-line:
+    - error
+    - initializations
+  no-return-assign: error
+
+  # naming conventions
+  camelcase: error
+  id-length:
+    - warn
+    -
+      min: 2
+      max: 50
+      exceptions: ['i']
+
+  # formatting
+  brace-style:
+    - error
+    - allman
+    -
+      allowSingleLine: true
+  no-else-return: error
+  max-len:
+    - warn
+    -
+      code: 100
+      ignoreStrings: true
+      ignoreTemplateLiterals: true
+      ignoreRegExpLiterals: true
+  no-case-declarations: error
+  comma-dangle:
+    - error
+    - always-multiline
+  comma-style:
+    - error
+    - last
+  default-case: warn
+  no-lonely-if: error
+  semi:
+    - error
+    - always
+
+  # whitespace
+  no-empty: error
+  no-empty-function: error
+  indent:
+    - error
+    - 4
+    -
+      SwitchCase: 1
+  keyword-spacing: error
+  space-infix-ops: error
+  eol-last:
+    - error
+    - always
+  padded-blocks:
+    - error
+    - never
+  no-multiple-empty-lines:
+    - error
+    -
+      max: 1
+  space-in-parens:
+    - error
+    - never
+  array-bracket-spacing:
+    - error
+    - never
+  computed-property-spacing:
+    - error
+    - never
+  object-curly-spacing:
+    - error
+    - never
+  comma-spacing: error
+  key-spacing: error
+  no-trailing-spaces: error
+
+  # objects
+  no-new-object: error
+  object-shorthand: error
+  prefer-object-spread: warn
+  quote-props:
+    - error
+    - as-needed
+  dot-notation: error
+  dot-location:
+    - error
+    - property
+  no-whitespace-before-property: error
+  object-curly-newline:
+    - error
+    -
+      consistent: true
+  guard-for-in: warn
+  no-useless-computed-key: error
+
+  # arrays
+  no-array-constructor: error
+  array-bracket-newline:
+    - error
+    - consistent
+  array-element-newline:
+    - error
+    - consistent
+
+  # strings
+  quotes:
+    - error
+    - single
+  prefer-template: error
+  template-curly-spacing:
+    - error
+    - never
+  no-useless-escape: error
+  no-eval: error
+
+  # functions
+  func-style:
+    - error
+    - declaration
+    -
+      allowArrowFunctions: true
+  wrap-iife:
+    - error
+    - inside
+  prefer-rest-params: error
+  prefer-spread: error
+  prefer-arrow-callback: warn
+  arrow-spacing: error
+  arrow-body-style:
+    - warn
+    - as-needed
+  arrow-parens:
+    - error
+    - always
+  func-call-spacing:
+    - error
+    - never
+  getter-return: error
+  array-callback-return: error
+  consistent-return: error
+  no-return-await: error
+  no-useless-call: error
+  require-await: warn
+  new-parens: error
+
+  # operators
+  no-plusplus: error
+  eqeqeq:
+    - error
+    - always
+    -
+      null: ignore
+  no-nested-ternary: error
+  no-unneeded-ternary: error
+  no-mixed-operators: error
+  no-implicit-coercion: error
+  operator-linebreak:
+    - error
+    - before
+  no-sequences: error
+
+  # numbers and other builtins
+  prefer-numeric-literals: error
+  symbol-description: warn
+  no-new-wrappers: error
+
+  # comments
+  spaced-comment:
+    - error
+    - always
+    -
+      exceptions: ['/', '+', '-', '=']
+  capitalized-comments:
+    - warn
+    - always
+    -
+      ignoreConsecutiveComments: true
+
+  # error handling
+  no-throw-literal: error
+  prefer-promise-reject-errors: error
+
+  # node.js
+  callback-return: error
+  handle-callback-err:
+    - error
+    - ^(err|error|(.+Error)|(.+Err))$
+  no-buffer-constructor: error
+  no-sync:
+    - warn
+    -
+      allowAtRootLevel: true
+  consistent-this:
+    - error
+    - self
+
+  # fringe stuff not worth mentioning elsewhere
+  no-compare-neg-zero: error
+  block-scoped-var: error
+  no-labels: error
+  no-caller: error
+  # no-multi-spaces: error
+  no-self-compare: error
+  no-delete-var: error
+  no-undefined: error
+  no-use-before-define:
+    - error
+    - nofunc
+  no-duplicate-imports: error
