@@ -725,6 +725,7 @@ MY_NODE_MODULE_CALLBACK(PrintDirect)
         }else{
             std::string error_str("StartPagePrinter error: ");
     	    error_str += getLastErrorCodeAndMessage();
+            ClosePrinter(*printerHandle);
             RETURN_EXCEPTION_STR(error_str.c_str());
         }
         // Inform the spooler that the document is ending.
@@ -732,8 +733,12 @@ MY_NODE_MODULE_CALLBACK(PrintDirect)
     }else{
     	std::string error_str("StartDocPrinterW error: ");
     	error_str += getLastErrorCodeAndMessage();
+        ClosePrinter(*printerHandle);
         RETURN_EXCEPTION_STR(error_str.c_str());
     }
+
+    ClosePrinter(*printerHandle);
+
     // Check to see if correct number of bytes were written.
     if (dwBytesWritten != data.size()) {
         RETURN_EXCEPTION_STR("not sent all bytes");
