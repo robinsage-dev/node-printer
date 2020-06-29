@@ -16,8 +16,10 @@
     "url": "https://github.com/robinsage-dev/node-printer.git"
   },
   "devDependencies": {
-    "nodeunit": "*",
-    "aws-sdk": "2.x"
+    "aws-sdk": "2.x",
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "nodeunit": "*"
   },
   "engines": {
     "node": ">= 12.18.0"
@@ -27,7 +29,7 @@
     "npg": "node-pre-gyp",
     "npg-clean": "node-pre-gyp clean",
     "npg-build": "node-pre-gyp build",
-    "test": "nodeunit test"
+    "test": "mocha test"
   },
   "binary": {
     "module_name": "node_printer",
@@ -45,6 +47,7 @@
     "eslint": "^6.8.0",
     "get-stream": "^5.1.0",
     "nan": "^2.14.0",
-    "node-pre-gyp": "^0.15.0"
+    "node-pre-gyp": "^0.15.0",
+    "node-thermal-printer": "^4.1.2"
   }
 }

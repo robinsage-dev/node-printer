@@ -501,7 +501,7 @@ MY_NODE_MODULE_CALLBACK(PrintDirect)
 
     cupsFinishDocument(CUPS_HTTP_DEFAULT, *printername);
 
-    MY_NODE_MODULE_RETURN_VALUE(V8_VALUE_NEW(Number, job_id));
+    MY_NODE_MODULE_RETURN_VALUE(V8_VALUE_NEW(Number, job_id)); 
 }
 
 MY_NODE_MODULE_CALLBACK(PrintFile)
